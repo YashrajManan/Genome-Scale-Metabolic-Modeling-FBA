@@ -1,0 +1,20 @@
+# Private, git-ignored per this portfolio's convention -- learning files, not published
+WORKFLOW.md
+PROJECT_NARRATIVE.md
+INTERVIEW_QA.md
+INTERPRETATION.md
+
+# Blank/hint teaching scaffold -- the clean, filled-in notebook is what gets pushed
+genome_scale_fba_ecoli_iml1515.ipynb
+
+# Downloaded SBML model file -- large (~11MB), reproducible by re-running the notebook, not dumped into the repo
+iML1515.xml
+.cobrapy_cache/
+
+# Local uploaded practice copy, kept locally only
+genome_scale_fba_ecoli_iml1515_ran_tried_hands_on_practiced.ipynb
+
+# Standard
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
