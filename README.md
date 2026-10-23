@@ -76,14 +76,11 @@ backup isn't fully available in practice.
 
 ## Learning through project
 
-Two real bugs shaped this build, in different parts of the stack. First, COBRApy's own built-in BiGG loader
-(`cobra.io.load_model`) failed outright — its internal HTTP client doesn't follow BiGG's real `http`→`https`
-redirect, a genuine bug in a widely-used package, fixed by fetching the SBML file directly with `requests`
-instead. Second, `single_gene_deletion`'s real output isn't indexed by gene ID (a common, reasonable
-assumption) — the real gene ID is buried inside an `"ids"` column as a one-element `frozenset`, requiring
-explicit extraction before any merge against the real PEC validation data could work. Both are examples of
-the same lesson: verify a library's actual real output shape directly (print it, inspect it) rather than
-assume a convenience function behaves the way its name suggests.
+The same lesson showed up twice in different parts of this build's stack: verify a library's actual real
+output and behavior directly — print it, inspect its real shape, check what it actually returns on the
+live service — rather than assume a convenience function works the way its name or a common assumption
+suggests. That discipline is what made both a failing built-in loader and a non-obviously-structured return
+value tractable to debug quickly rather than mysterious.
 
 ## Caveats
 
